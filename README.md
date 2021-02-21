@@ -1,7 +1,70 @@
 # UBCx-SimpleData
 
 ## Chapter 1: Designing Functions
+The HtDF recipe consists of the following steps:
 
+1) Signature, purpose and stub.
+2) Define examples, wrap each in check-expect.
+3) Template and inventory.
+4) Code the function body.
+5) Test and debug until correct
+
+Write the function signature, a one-line purpose statement and a function stub.
+
+A signature has the type of each argument, separated by spaces, followed by ->, followed by the type of result. So a function that consumes an image and produces a number would have the signature Image -> Number.
+```
+;; Number -> Number
+;; produces n times 2
+
+(define (double n)  0)  ; this is the stub
+```
+
+Write at least one example of a call to the function and the expected result the call should produce. You will often need more examples, to help you better understand the function or to properly test the function. 
+
+```
+;; Number -> Number
+;; produces n times 2
+
+(define (double n)  0)  ; this is the stub
+(check-expect (double 0) (* 0 2))
+(check-expect (double 1) (* 1 2))
+(check-expect (double 3) (* 3 2))
+```
+
+Before coding the function body it is helpful to have a clear sense of what the function has to work with -- what is the contents of your bag of parts for coding this function? The template provides this.
+
+This is our function so far:
+```
+;; Number -> Number
+;; produces n times 2
+(check-expect (double 0) (* 0 2))
+(check-expect (double 1) (* 1 2))
+(check-expect (double 3) (* 3 2))
+
+;(define (double n) 0) ; this is the stub
+
+(define (double n)     ; this is the template
+  (... n))
+```
+
+Now complete the function body by filling in the template.
+```
+;; Number -> Number
+;; produces n times 2
+(check-expect (double 0) (* 0 2))
+(check-expect (double 1) (* 1 2))
+(check-expect (double 3) (* 3 2))
+
+;(define (double n) 0) ; this is the stub
+
+;(define (double n)    ; this is the template
+;  (... n))
+
+(define (double n)
+  (* n 2))
+```
+
+Run the program and make sure all the tests pass, if not debug until they do.
 
 ## Chapter 2: Designing Data
 
