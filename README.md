@@ -195,8 +195,8 @@ When the information in the program's domain is of arbitrary size, a well-formed
 
 In order to be well-formed, a self-referential data definition must:
 
-(i) have at least one case without self reference (the base case(s))
-(ii) have at least one case with self reference
+* have at least one case without self reference (the base case(s))
+* have at least one case with self reference
 
 In some cases a types comment can have both self-reference and reference to another type.
 ```
